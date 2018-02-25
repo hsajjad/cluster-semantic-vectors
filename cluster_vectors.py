@@ -38,7 +38,7 @@ def build_word_vector_matrix(vector_file, n_words):
 				numpy_arrays.append( numpy.array([float(i) for i in sr[1:]]) )
 	
 			except ValueError:
-				print c, len(sr)	
+				print (c, len(sr))	
 
 			if c == n_words:
 				return numpy.array( numpy_arrays ), labels_array
@@ -66,7 +66,7 @@ if __name__ == "__main__":
 	cluster_inertia   = kmeans_model.inertia_	
 	cluster_to_words  = find_word_clusters(labels_array, cluster_labels)
 
-	with open("glove_clusters_" + str(sys.argv[2]) + "_words.json",'w') as json_out:
+	with codecs.open("glove_clusters_" + str(sys.argv[2]) + "_words.json",'w', 'utf-8') as json_out:
 		json.dump(cluster_to_words, json_out)	
 
 	'''
