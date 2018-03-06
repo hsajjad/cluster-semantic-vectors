@@ -30,7 +30,7 @@ def build_word_vector_matrix(vector_file, n_words):
 		for c, r in enumerate(f):	
 			sr = r.lower().split()
 		
-			if len(sr) != 301:
+			if len(sr) == 2:
 				continue
 	
 			try:
